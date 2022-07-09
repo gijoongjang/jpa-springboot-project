@@ -1,2 +1,2 @@
-# jpa-springboot-project
+# jpa-springboot-study
 springboot
