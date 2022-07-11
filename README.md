@@ -1,2 +1,2 @@
-# jpa-springboot-study
+# jpa-springboot-aws-study
 springboot
