@@ -1,5 +1,6 @@
 package com.jpa.spingboot.controller;
 
+import com.jpa.spingboot.config.auth.dto.SessionUser;
 import com.jpa.spingboot.dto.PostResponseDto;
 import com.jpa.spingboot.service.posts.PostService;
 import lombok.RequiredArgsConstructor;
@@ -8,15 +9,25 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import javax.servlet.http.HttpSession;
+
 @RequiredArgsConstructor
 @Controller
 public class IndexController {
 
     private final PostService postService;
+    private final HttpSession httpSession;
 
     @GetMapping("/")
     public String root(Model model) {
         model.addAttribute("post", postService.findAll());
+
+        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+
+        if(user != null) {
+            model.addAttribute("userName", user.getName());
+        }
+
         return "index";
     }
 
