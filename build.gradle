@@ -24,6 +24,7 @@ dependencies {
     implementation('com.h2database:h2')
     compileOnly('org.springframework.boot:spring-boot-starter-mustache')
     compileOnly('org.springframework.boot:spring-boot-starter-oauth2-client')
+    compileOnly('org.springframework.session:spring-session-jdbc')
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
