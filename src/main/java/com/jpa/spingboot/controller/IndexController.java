@@ -1,9 +1,11 @@
 package com.jpa.spingboot.controller;
 
+import com.jpa.spingboot.config.auth.LoginUser;
 import com.jpa.spingboot.config.auth.dto.SessionUser;
 import com.jpa.spingboot.dto.PostResponseDto;
 import com.jpa.spingboot.service.posts.PostService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.java.Log;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,10 +21,10 @@ public class IndexController {
     private final HttpSession httpSession;
 
     @GetMapping("/")
-    public String root(Model model) {
+    public String root(Model model, @LoginUser SessionUser user) {
         model.addAttribute("post", postService.findAll());
 
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+//        SessionUser user = (SessionUser) httpSession.getAttribute("user");
 
         if(user != null) {
             model.addAttribute("userName", user.getName());
