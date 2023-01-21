@@ -2,7 +2,6 @@ package com.jpa.spingboot.domain.post;
 
 import com.jpa.spingboot.dto.PostSaveRequestDto;
 import com.jpa.spingboot.dto.PostUpdateRequestDto;
-import javafx.geometry.Pos;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
