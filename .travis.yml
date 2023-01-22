@@ -18,9 +18,9 @@ before_install:
   - chmod +x gradlew
 
 before_deploy:
-  - zip -r springboot-webservice *
+  - zip -r springboot-aws-study *
   - mkdir -p deploy
-  - mv springboot-webservice.zip deploy/springboot-aws-study.zip
+  - mv springboot-aws-study.zip deploy/springboot-aws-study.zip
 
 deploy:
   - provider: s3
