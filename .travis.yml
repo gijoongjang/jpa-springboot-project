@@ -1,6 +1,6 @@
 language: java
 jdk:
-  - openjdk11
+  - openjdk8
 
 branches:
   only:
@@ -37,7 +37,7 @@ deploy:
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
     bucket: springboot-build-test
-    key: springboot-webservice.zip
+    key: springboot-aws-study.zip
     bundle_type: zip
     application: springboot-webservice
     deployment_group: springboot-webservice-group
