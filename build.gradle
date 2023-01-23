@@ -24,8 +24,8 @@ dependencies {
     implementation('com.h2database:h2')
     compileOnly('org.springframework.boot:spring-boot-starter-mustache')
     implementation('org.springframework.boot:spring-boot-starter-oauth2-client')
+    implementation('org.mariadb.jdbc:mariadb-java-client')
     compileOnly('org.springframework.session:spring-session-jdbc')
-    compileOnly("org.mariadb.jdbc:mariadb-java-client")
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation("org.springframework.security:spring-security-test")
 }
